@@ -1,0 +1,16 @@
+br\com\fiap\test\EstabelecimentoTest.class
+br\com\fiap\cap4smartcities\dao\AvaliacaoDAO.class
+br\com\fiap\cap4smartcities\dao\UsuarioDAO.class
+br\com\fiap\entity\Avaliacao.class
+br\com\fiap\cap4smartcities\testes\DAOTeste.class
+br\com\fiap\entity\ClientePF.class
+br\com\fiap\entity\Usuario.class
+br\com\fiap\entity\TipoEstabelecimento.class
+br\com\fiap\entity\AvaliacaoId.class
+br\com\fiap\entity\Cliente.class
+br\com\fiap\entity\ClientePJ.class
+br\com\fiap\cap4smartcities\testes\JPATeste.class
+br\com\fiap\cap4smartcities\dao\TipoEstabelecimentoDAO.class
+br\com\fiap\entity\Estabelecimento.class
+br\com\fiap\cap4smartcities\dao\GenericDAO.class
+br\com\fiap\entity\ContratoAluguel.class

@@ -11,15 +11,11 @@ public class DAOTeste {
 	public static void main(String[] args) {
 		EntityManager em = null;
 		try {
-			em = Persistence.createEntityManagerFactory("smartcities-orm").createEntityManager();
+			em = Persistence.createEntityManagerFactory("cap4smartcities").createEntityManager();
 			TipoEstabelecimentoDAO dao = new TipoEstabelecimentoDAO(em);
 			
-			//Implementações que utilizam os métodos do DAO
-			
-			TipoEstabelecimento tipo = new TipoEstabelecimento();
-			tipo.setNome("Bar e Restaurante");
-			dao.cadastrar(tipo);
-			dao.commit();			
+			salvaTipoEstabelecimento(dao);
+			TipoEstabelecimento tipoEstabelecimento = buscaTipoEstabelecimento(dao);			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -31,5 +27,24 @@ public class DAOTeste {
 			System.exit(0);
 		}
 
+	}
+	
+	private static void salvaTipoEstabelecimento(TipoEstabelecimentoDAO dao) throws Exception {
+		TipoEstabelecimento tipo = new TipoEstabelecimento();
+		tipo.setNome("Bar e Restaurante");
+
+		dao.cadastrar(tipo);
+		dao.commit();			
+	}
+
+	private static TipoEstabelecimento buscaTipoEstabelecimento(TipoEstabelecimentoDAO dao) {
+		TipoEstabelecimento entidade = dao.buscar(1);
+		
+		if (entidade == null) {
+			System.out.println("Não existe estabelecimento de chave 1");
+		}else {
+			System.out.println(" > " + entidade.getId() + " - " + entidade.getNome());
+		}
+		return entidade;
 	}
 }
