@@ -31,4 +31,9 @@ public class TipoEstabelecimentoDAO extends GenericDAO<TipoEstabelecimento, Inte
 		return this.em.createQuery("from TipoEstabelecimento order by nome").setMaxResults(itensPorPagina)
 				.setFirstResult(primeiro).getResultList();
 	}
+
+	public TipoEstabelecimento recuperar(Integer idPesquisa) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
